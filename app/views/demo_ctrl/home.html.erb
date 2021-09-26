@@ -1,2 +1,22 @@
-<h1>DemoCtrl#home</h1>
-<p>Find me in app/views/demo_ctrl/home.html.erb</p>
+<h1>
+    Qasim Home
+</h1>
+
+<nav>
+<%= link_to "About US", {:action=>'about'} %>
+
+</nav>
+<p>ERB</p>
+
+<%  red1 = "This is a var page"%>
+
+<% @myArray.each_index do |n| %>
+<%= n+1 %>
+<br>
+<%="#{red1}!"%>
+<br> 
+<%= "#{@myArray}" %>
+<br> 
+<% end %>`
+
+<%= link_to "Index Page", {:action => 'index', :param1=>'red', :param2 => "red"}%>

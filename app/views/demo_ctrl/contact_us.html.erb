@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact US</title>
+</head>
+<body>
+    <h2> Contact us</h2>
+    <p> 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae aut ipsa. Iusto deserunt accusamus esse error sapiente facilis ipsum quisquam saepe excepturi, veritatis sed dolor fugit minus fuga quaerat.
+    </p>
+
+    <% if params['country'].downcase  == 'us' %>
+        Tel : USA num
+        
+    <% elsif params['country'].downcase  == 'ca'  %>
+            Tel : CA num
+    <% else %>
+        Tel : World
+    <% end %>
+</body>
+<%= link_to "About US", demo_ctrl_about_path %>
+</html>

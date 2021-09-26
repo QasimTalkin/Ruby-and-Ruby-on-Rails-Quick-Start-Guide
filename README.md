@@ -32,3 +32,8 @@ Things you may want to cover:
 * Default route : :controller :action :id `get ':controller(/:action(/:id))'` or `match ':controller(/:action(/:id))', :via=>:get` parenthesis are optional
 * root route :  route to root of app `root 'demo#index'`
 * resourceful route :
+
+### varibale vs instance variable (@)
+
+- are scoped to that .rb
+- to be used on views we use instance variable something like @qasim 

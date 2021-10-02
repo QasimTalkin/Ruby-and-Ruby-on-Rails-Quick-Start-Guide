@@ -1,2 +1,16 @@
 <h1>Subjects#edit</h1>
 <p>Find me in app/views/subjects/edit.html.erb</p>
+
+
+<%= form_for( @subject) do |f| %>
+
+
+<%= render :partial => "f", :locals=>{:f => f}  %>
+
+
+<div class="form-button">
+
+<%= f.submit("Create Subject") %>
+
+</div>
+<% end %>

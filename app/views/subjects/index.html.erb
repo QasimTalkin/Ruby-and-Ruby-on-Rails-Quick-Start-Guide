@@ -1,2 +1,29 @@
 <h1>Subjects#index</h1>
 <p>Find me in app/views/subjects/index.html.erb</p>
+
+<%= link_to "Add a new Subject", new_subject_path, :class => 'action new' %>
+
+<table class='table'>
+    <tr>
+        <th>ID</th>
+        <th> Subject</th>
+        <th>pages</th>
+        <th>visible</th>
+        <th>Actions</th>
+    </tr>
+
+<% @subjects.each do |subject| %>
+
+<tr>
+
+<td> <%=subject.id%>  </td>
+<td> <%=subject.name %> </td>
+<td> <%=subject.pages.size%> </td>
+<td> <%=subject.visible ? 'YUP' : 'NOOP'%> </td>
+<td class = 'actions'>
+<%= link_to "Show",  subject_path(subject), :class => "action show"%>
+<%= link_to "Edit", edit_subject_path(subject), :class => 'action edit' %>
+<%= link_to "delete", delete_subject_path(subject), :class => 'action delete' %>
+</td>    </tr>
+<% end %> 
+</table>

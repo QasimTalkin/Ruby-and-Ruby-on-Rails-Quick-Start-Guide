@@ -1,3 +1,11 @@
 
 <%= @subject.id %>
 <%= link_to "Just sub", edit_subject_path(@subject.id) %>
+
+  <tr> 
+    <th><%= @subject.id %></th>
+    <th><%= @subject.position ? '23': "dd dsss" %></th>
+    <th><%= @subject.name %></th>
+    <th><%= @subject.visible ? 'YES' : 'NO' %></th>
+   
+</table>

@@ -60,6 +60,12 @@ Things you may want to cover:
   ```
 * Condition methods "where"
 
+#### Rails controller db commands 
+
+Take table Peopel
+
+`People.all` list all value sin table people
+ 
 ### Database association
 
 * one to many
@@ -103,3 +109,7 @@ Things you may want to cover:
 ![helpers](helper%20url.png)
 
 ![links to user](links.png)
+
+### Read Action : index Action
+
+- 

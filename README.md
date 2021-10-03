@@ -1,29 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-## **Notes**
+## Rails
 
 ### Routes
 
@@ -46,7 +23,9 @@ Things you may want to cover:
     user.fn = "Qasim"
     user.save # SQL insert
     ```
+
 * Active relation small queries combined together
+
   ```rb
     user = user.where(ln:"Qasim")
     users.each{|user|...}
@@ -58,14 +37,15 @@ Things you may want to cover:
     # Delete and Destroy 
     # best to user Destroy
   ```
+
 * Condition methods "where"
 
-#### Rails controller db commands 
+#### Rails controller db commands
 
 Take table Peopel
 
 `People.all` list all value sin table people
- 
+
 ### Database association
 
 * one to many
@@ -90,7 +70,7 @@ Take table Peopel
   * optimized for REST
 
   * on `routes.rb`
-  * add resource:controller_name to get all the resourseful routes 
+  * add resource:controller_name to get all the resourseful routes
   * does not come with delete
   
     ```ruby
@@ -102,6 +82,7 @@ Take table Peopel
     end
     
     ```
+
 ### resourseful url helopers
 
 ![resourseful URL helpwe](2021-09-27-20-14-06.png)
@@ -112,4 +93,264 @@ Take table Peopel
 
 ### Read Action : index Action
 
+## Ruby
+
+### documentation
+
+`ri String#upcase` ruby information on String -> upcase
+
+### Objects
+
+* everything is Object!!!
+
+- Object have attributes -> object is an instance of Class
+- attributes are what make them diffrence 
+- they have behaviour (mont add mroe if limit is full)
+- . method calls a behvaoiur of the object 
+### variable
+
+- `red = 1` object red with  have value 1
+- $ global variable
+- @ instance variable
+- @@ class variable
+
+
+### Numerics
+
+- interger `to_i`
+- floths `to_f`
+- `abs`
+- `ceil`
+- `floor`
+- `round`
+
+### String
+- `+` add strind
+- `<<` append 
+- `reverse`
+- `capitalize`
+- `upaces`
+- `downcase`
+- `length`
+  **string interpolation(JS LITTERALS)**
+- escape `"` 
+- "red car"""s"??? use backslash as escape helper 
+- ONLY WORKS WITH DOUBLE QUOTES
+- `"let\'s"` 
+- `\n ` new line
+- `\t` tab 
+- `"#{var}"`
+
+### Arrays
+- defiend in [] brackets, 
+- can mix object types 
+- zero index
+- apprend end of array `<<`
+- **array methods**
+- arr.length or x.size, 
+- x.rverse, 
+- x.shuffle 
+- ! -> powerul version of that method
+- `x.reverse!` -> reverse and assign.
+- `x.uniq` -> uniq items in the array
+- `x.compact` -> remove any nills in array 
+- `x.flatten` -> aray will flattern all array within array are set as sinfle dim 
+- `x.include?(3)`-> true or false 
+- `x.delete_at(3)`-> deleted at 3rd index 
+- or by name `x.delete(Qasim')`
+- `y = x.join('~') => "567353~567~56735~2~3~~5673~56~567353~~~Abu~Qasim~4"`
+- push pop shift unshift 
+- add + substract - 
+
+
+### Hashes
+- unordetrred collection 
+- tracked useiong object 
+- key-value 
+- **Hash methods**
+- looked up by label 
+- unique hash key 
+- {} 
+- specify the index
+- comma delimated list of key value pairs 
+- car = `{'1'=>'2', 'color'=>'red', ...`
+- car['1'] -> 2
+- car.keys
+- car.values
+- car.length, car.size
+- `x.has_key?('a')`
+- has_key?
+- hash short hand `x={red:"2", ...`
+- Does not work with numbs
+- can use integer but not using short hand notaion
 - 
+### Symbols 
+- cannot be eeditedw 
+- begins with colon 
+- all lowercase 
+- :car
+- better momoenry and cannot be edited 
+- same item in memory 
+- doesnt garbnage collect often 
+- KEY IS ALWAYS SYMBOL
+  
+
+### BOOLENA
+- `TRUE
+- !['BOOL OPERANDS'](BOOL.png)
+- X.EM
+
+### Ranges 
+
+- inclusive range `1..10` 1 to 10
+- exclusive range `1...10`` 1 to 9
+- .begin -> first
+- .end -> last 
+- inlcude? 
+- **Trick** array out of range -> `x=[*i]`
+
+### Constants 
+
+- All UPPERCASE 
+- MAX_SCORE = 100
+- FIRST letter is contant 
+  
+### nil 
+
+- nothing
+- x.nill? 
+- ! in front means does it have a vlue. 
+
+
+## Control Structure 
+
+### if else if...
+
+```
+if boolean 
+elsif boolean
+else boolen
+end
+```
+
+### unless
+- same as if not -> ! 
+```
+unlsss boolen 
+end 
+```
+### case
+- case with boolean
+```
+case 
+when boolean
+when boolean
+else 
+end 
+```
+- case with compariosn
+```
+case value
+when a
+when b
+when 1..3
+else 
+end 
+```
+### sortHand 
+- if else 
+  `boolean ? resul1 : result2` 
+  true -> result1 
+  flaee -> result2 
+
+- or operator 
+  `x=y||z`
+  use y or default to zero
+`x||=y `
+  if x has value x else x = y
+`x=y unless x`
+
+### loops
+- control method
+  - break 
+  - next 
+  - redo
+```
+loop do 
+break if bool 
+some calc
+end
+
+
+while until 
+
+while bool 
+
+end
+untill bool
+end 
+
+
+loop do 
+    break if count < 5
+    puts "Count donwn #{count}"
+    count-=5
+end 
+
+while count > 5 
+    puts "Count donwn #{count}"
+    count-=5
+end 
+
+x = 1..10
+x= x.to_a
+until x.empty? 
+    f=x.shift
+    puts x[2]
+   puts "VALUE  #{f.to_s.upcase}"
+end
+
+```
+### itirators
+
+- perform code on each item 
+ 
+  ```
+  5.times {puts 'hello'}
+  1.upto(5) {puts 'hello'}
+  3.dwonto(1) {puts 'hello'}
+  (1..5).each {puts 'hello'}
+  ```
+- block var |var|
+
+- Number: times, upto, downto, steps
+- Range : each, steps
+- String : each_line, each_char, each_byte
+- Array : each, each_index, each_with_index
+- Hash: each, each_key, each_value, each_pair
+
+## Best Practices
+- Sheband line `#!/ur/bin/env ruby` <- tells what to run in 
+
+### Exit a running script
+- Ctrl + C
+- exit, exit! 
+- abort (msg)
+
+###  Input and Output
+**output** 
+- puts has a /n extra line return 
+- print 
+**inpout** 
+- gets input = gets
+- `chop` removes last cahr of String
+- `chomp` removess last char of a string *** *** 
+
+## Enumrable -> can be counted 
+- array hash ranges string
+- count 
+- each 
+-  do ----> end
+-  e.times { }
+-  Scope -> block var has score 
+-  

@@ -507,3 +507,82 @@ end
  
 
 pig lating 
+
+## ---------------------------
+## Ruby Classes !!!1 
+
+## ---------------------------
+
+### Define calsses 
+- template of state and behaviour
+- attribute -> state 
+- methods -> behaviour
+ ```rb 
+ Calss CamleCaseNAme  
+
+ end 
+ ```
+- creating instance 
+- c = CamleCaseNAme.new 
+- c2 = CamleCaseNAme.new 
+### attributes 
+- values that pesit indi and instance of a class 
+- properties of a an object 'car is greeen'
+- @instace var it persisits through the instace
+
+### Readed and Writer method
+- getter and setter methods
+- Ruby 
+  ```ruby
+
+  # get_noice 
+  def noise
+   @noice 
+  end
+  # set_noise
+  def noise = (value)
+  @noice = vlue 
+  end
+  ```
+
+  ### Attribaute methods 
+  - atte_*methods
+  - - instd of set get we just use Symbols
+  - `attr_reader :noice` same as `get_noice` 
+  - to get and set we use `attr_acessor` 
+  - self! passed through a method 
+  ```ruby
+    def noise=(value) 
+        @noise = value+'33'
+    end #value33
+    def cranky 
+        @noise = 'cra ky'
+    end #cra key
+    def cranky1 
+        self.noise = 'cra-ky'
+    end #cra-ky33
+  ```
+
+### method acess calls
+- restricet acess methods
+- public anyone 
+- private can only be called from within the calls 
+- protected can be called by instance of class and its subclasses ![helpers](helper%20methods.png)
+- helpermethods
+```ruby
+class ...
+methods ..
+
+...
+
+private 
+-- alll privaste mehods here 
+```
+- only allwo acess to methdos when  necessory
+### initialize methods
+- default methjods whenever an instqace of class is created
+- methods `initizlize` get automatically called 
+
+### Challange 
+- ![dice](RR2pics/dice.png)
+-  ![diceGame](RR2pics/diceGame.png)![](RR2pics/diceset.png)

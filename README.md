@@ -586,3 +586,223 @@ private
 ### Challange 
 - ![dice](RR2pics/dice.png)
 -  ![diceGame](RR2pics/diceGame.png)![](RR2pics/diceset.png)
+
+## Class methods
+- class specefic behaviours 
+-  user `self` for class methods
+-  class methods Array.new
+-  instance methods Array#size
+
+### class attributes
+- properties related to class genrally 
+- shared by all instances, as its stored in the class
+- calss methods use > class attr uses 
+- uses double @ `@@var`
+
+```rb 
+class Animal
+
+    attr_accessor :noise, :color, :legs
+
+    # def noise
+    #     @noise
+    # end
+
+    @currentAnimal = ['some animal']
+    @currentTotal = 0
+    @@addedAnimal = ['some anumals']
+    @@addedTotal = 0
+
+    def initialize(options={})
+      @noise, @color, @legs = options[:noise] || "noise",  options[:color] || "color", options[:legs] || " legs"
+      @@addedTotal +=1
+      @currentTotal = 1
+      @@addedAnimal << self
+
+    end
+
+    def self.types 
+        @@addedAnimal
+    end
+
+
+    def self.total 
+        @@addedTotal 
+    end
+
+end
+
+puts ''
+a1 = Animal.new 
+a2 = Animal.new 
+a3 = Animal.new 
+a4 = Animal.new 
+
+puts '----------@@addedTypes-------------'
+puts Animal.total
+
+### ----------@@addedTypes-------------
+### 4
+```
+
+### Class Reader Writer methods
+- same care createing reader writer for instace var 
+- no `attr_accessor` for class methods 
+
+### Radio challange 
+```rb 
+
+class Radio
+    attr_accessor :volume, :frequency 
+    attr_accessor :band
+
+    @@fm_freq = 88.0..108.00
+    @@defaultFmFreq = 95.5
+    @@am_freq = 540.0..1600.00
+    @@defaultAmFreq = 1010.0
+
+    def self.am 
+        Radio.new(band: 'AM')
+    end
+
+    def self.fm 
+        Radio.new(band: 'FM')
+    end
+
+    def initialize(options={})
+        @band = options[:band] || 'FM'
+        @volume = options[:volume] || 5
+        @frequency = default_freq
+    end
+
+
+
+    #  volume setter condtion cannot go below 1 and above 10 
+    def volume=(value)
+        return if value <1 || value > 10 
+        @volume = value 
+    end
+
+    def crankUp
+        @volume = 11
+    end
+
+    def Volstatus 
+        "Volume : #{@volume}"
+    end
+
+    # Frequency FM 88 to 108 AM 540 to 1600 
+    def  frequency=(value)
+        return if @band == 'AM' && (value <540 || value > 1600)
+        return if @band == 'FM' && (value <88 || value > 108) 
+        @frequency = value 
+    end
+
+
+    def status 
+        "Freq #{@frequency} --  Ban  #{@band} -- vol  #{@volume}"
+    end
+
+
+private 
+
+    def default_freq 
+       @band == 'FM' ? @@defaultFmFreq : @@defaultAmFreq
+    end 
+
+
+end
+
+r1 = Radio.fm
+r1.crankUp
+r1.volume = 25
+r1.frequency = 1000
+puts r1.status 
+
+r2 = Radio.am
+r2.volume = 25
+r2.frequency = 24
+puts r2.status
+puts r1.Volstatus
+puts r2.Volstatus
+
+# Freq 95.5 --  Ban  FM -- vol  11
+# Freq 1010.0 --  Ban  AM -- vol  5
+# Volume : 11
+# Volume : 5
+```
+
+## Class inheritance 
+- attribute inheritance 
+- Animal -> inherit behviours 
+` calss subclass < Animal `
+
+-paents must exisit before child inheritds 
+- DRY 
+- - can inheritt commone set of behaviour 
+### oversire and exrtend 
+- as kids you can override or add new moehtods 
+
+### Acess super calss from child class 
+- call parents mwthods 
+  - setup and then call pareent s
+  - fall back to emthods ? 
+`super` -> CALL THE PARENT 
+![super inheritace](ROR2pics/calssinheritance.png)
+
+- proive ars to super 
+
+
+## DATE and TIME 
+
+- time is in nofsecods since jan 1 1970 
+- same as unix time 
+- `Time.now` 
+- ![timw methods](ROR2pics/timezone.png)
+
+### Date class 
+- just focus on Dates
+![date funcs](ROR2pics/dates.png)
+### Datetime class -> sub class of date time 
+- just focus on Dates
+![date funcs](ROR2pics/dates.png)
+### Date time challange 
+![](ROR2PICS/datetimechallange.png)
+
+## Namespacing 
+- conflicts with same Name
+- avoide conflicts in naming 
+![namespacing ](ROR2pic/namspacing.png)
+- wrap it in module call it using the module 
+- module A -> class Date 
+`something = A::Data.new`
+- prevent conflics with tuby or somialr class 
+- open source code us it mostly 
+  
+### Mixins
+- only one SUPERCLASS  -> only one parent
+- module paakage up sahred functionality
+- modules are then mixed into class
+- DRY
+- SHARED FUCNTIONALORTY 
+- ADDRESS-> USED BYY person, driver, cusotmer 
+- module -> `include moduleName`
+
+### when to use what ? 4
+![when to use what](ROR2pics/mixins.png)
+
+### Load Require and Include 
+- Load: loads a source finishes
+- Require : smae as load - only one time 
+- ![load Require](RORpics/load%20requrie.png)
+- require - full path 
+- - require_relative : laods realitve tot he file 
+- include 'includes module in classes' others usee this dierrently 
+
+### ECEPTIONS Begin Rescue End 
+
+```rb 
+begin 
+resue 
+end 
+```

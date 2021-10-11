@@ -9,6 +9,7 @@ require_relative 'chef'
 require_relative 'armatureChef'
 require_relative 'shiftCipher'
 require_relative 'date'
+require_relative 'toDoList'
 
 # p1 = Person.new
 # p1.sayHello
@@ -116,8 +117,15 @@ require_relative 'date'
 
 ## Exceptions 
 
- begin 
+#  begin 
     
- rescue 
-    puts "yoooooo dont.lol "
- end 
+#  rescue 
+#     puts "yoooooo dont.lol "
+#  end 
+
+## Challange TO DO LIST 
+
+list = ToDoList.new(items: ["Qasim", "qasim", "qas"])
+
+puts list.sort
+puts list.items.inspect

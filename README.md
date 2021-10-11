@@ -799,10 +799,31 @@ puts r2.Volstatus
 - - require_relative : laods realitve tot he file 
 - include 'includes module in classes' others usee this dierrently 
 
+### challange
+- Class ToDoList includeing enumarable module
+-  to use enumrables as mixins we must define each metdod
+-  
+
 ### ECEPTIONS Begin Rescue End 
 
+- we `raise` and Exceptions
+- exception bubble up till orignal call
+- Handle specific exception using class name 
+- `rescue ZeroDivisionErro` put commma to add oanther exception
+- Exception methods use hashRocket
+- `e.backtrace` -> file, line and where the exception was raised 
+- Raise Exception! default Runtime. 
+- Raise with errorName `raise ArgumentError`
+![excep](ROR2pics/raiseExcpe.png)
+- Build custom exception class 
+  - inherit exception 
+    - `class new NewErroe < StandardError`
+    - 
 ```rb 
+
 begin 
-resue 
+resue => e 
+puts "#{e.class}, #{e.message}...#{e.backtrace}"
 end 
+
 ```

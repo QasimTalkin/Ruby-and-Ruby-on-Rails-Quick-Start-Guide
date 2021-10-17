@@ -1,95 +1,3 @@
-# README
-
-## Rails
-
-### Routes
-
-* Simple match route : can use `get qasim/index` or simply `match 'qasim/index', :to => 'qasim#index', :via => :get'` controller#action
-* Default route : :controller :action :id `get ':controller(/:action(/:id))'` or `match ':controller(/:action(/:id))', :via=>:get` parenthesis are optional
-* root route :  route to root of app `root 'demo#index'`
-* resourceful route :
-
-### varibale vs instance variable (@)
-
-* are scoped to that .rb
-* to be used on views we use instance variable something like @qasim
-
-### Active record and active relation
-
-* Active record, design pattern understand and interact with data
-
-    ```rb
-    user = User.new #user an instance of User table
-    user.fn = "Qasim"
-    user.save # SQL insert
-    ```
-
-* Active relation small queries combined together
-
-  ```rb
-    user = user.where(ln:"Qasim")
-    users.each{|user|...}
-
-
-    sub1 = Subject.find(2)
-    sub1.update(:name=>"red", :position=>1)
-
-    # Delete and Destroy
-    # best to user Destroy
-  ```
-
-* Condition methods "where"
-
-#### Rails controller db commands
-
-Take table Peopel
-
-`People.all` list all value sin table people
-
-### Database association
-
-* one to many
-* many to many
-* many to one
-
-### CRUD
-
-* Controller Plural
-* model dealing g with singular
-
-### REST
-
-* transform state
-* Subject and pages cna have actions prospered on it
-* edit is transformation add is transformation
-* using CRUD as transformation
-* REST uses GET and POST HTTP verbs
-* PATCH update
-* DELETE detecting
-* **RAILS resource full routes GET POST DELETE PATCH**
-  * optimized for REST
-
-  * on `routes.rb`
-  * add resource:controller_name to get all the resourseful routes
-  * does not come with delete
-
-    ```ruby
-
-        resources :pages do member
-        do
-        get :delete
-        end
-    end
-
-    ```
-
-### resourseful url helopers
-
-![resourseful URL helpwe](2021-09-27-20-14-06.png)
-![helpers](helper%20url.png)
-![links to user](links.png)
-
-### Read Action : index Action
 
 ## Ruby
 
@@ -826,4 +734,133 @@ resue => e
 puts "#{e.class}, #{e.message}...#{e.backtrace}"
 end 
 
-```
+````
+
+## Rails
+
+![l](-%20create%20controller%20and%20view%20-%20.png)
+- first looks up `public`
+- ![](rails%20public%20arc.png)
+
+### creating controller and views
+
+- `rails g <controllrtname> <viewname1> <viewname2>.....`
+this will create controlelr for all the views specidied
+
+- controller has action within it for every view 
+- within action you could use
+- `redirect_to(:controller`
+
+- Link to other pages  `link_to (text, target)`
+use @ to declare instace var that are accssibel by all of template 
+
+- contorller acessing prams 
+- `@id=params[:id]`
+- all params are string 
+
+- CRud actions 
+- ![](crud.png)
+
+- Rest HTTP 
+- ![](rest-http.png)
+- to hacve these routes added we use shorty notition 
+- delete is not added by default 
+- so we use ![](RESOURSE%20SOUNTE.png)
+
+- sending email - use mail to `mail_to('aaa@aa.com'` under erb tag
+
+- RESOUES FULL ROUTES HELPER 
+- ![](RRHELPER.png)
+- ![](RRHELPES.png)
+
+FORMS - FORM_FOR HELPER
+- ![](rubyformhelpers.png)
+### Routes
+
+* Simple match route : can use `get qasim/index` or simply `match 'qasim/index', :to => 'qasim#index', :via => :get'` controller#action
+* Default route : :controller :action :id `get ':controller(/:action(/:id))'` or `match ':controller(/:action(/:id))', :via=>:get` parenthesis are optional
+* root route :  route to root of app `root 'demo#index'`
+* resourceful route :
+
+
+### varibale vs instance variable (@)
+
+* are scoped to that .rb
+* to be used on views we use instance variable something like @qasim
+
+### Active record and active relation
+
+* Active record, design pattern understand and interact with data
+
+    ```rb
+    user = User.new #user an instance of User table
+    user.fn = "Qasim"
+    user.save # SQL insert
+    ```
+
+* Active relation small queries combined together
+
+  ```rb
+    user = user.where(ln:"Qasim")
+    users.each{|user|...}
+
+
+    sub1 = Subject.find(2)
+    sub1.update(:name=>"red", :position=>1)
+
+    # Delete and Destroy
+    # best to user Destroy
+  ```
+
+* Condition methods "where"
+
+#### Rails controller db commands
+
+Take table Peopel
+
+`People.all` list all value sin table people
+
+### Database association
+
+* one to many
+* many to many
+* many to one
+
+### CRUD
+
+* Controller Plural
+* model dealing g with singular
+
+### REST
+
+* transform state
+* Subject and pages cna have actions prospered on it
+* edit is transformation add is transformation
+* using CRUD as transformation
+* REST uses GET and POST HTTP verbs
+* PATCH update
+* DELETE detecting
+* **RAILS resource full routes GET POST DELETE PATCH**
+  * optimized for REST
+
+  * on `routes.rb`
+  * add resource:controller_name to get all the resourseful routes
+  * does not come with delete
+
+    ```ruby
+
+        resources :pages do member
+        do
+        get :delete
+        end
+    end
+
+    ```
+
+### resourseful url helopers
+
+![resourseful URL helpwe](2021-09-27-20-14-06.png)
+![helpers](helper%20url.png)
+![links to user](links.png)
+
+## Rails 2 Controller and view

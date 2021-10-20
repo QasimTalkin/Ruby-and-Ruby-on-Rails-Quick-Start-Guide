@@ -1,4 +1,8 @@
 class SubjectsController < ApplicationController
+
+
+  before_action :confirm_login
+
   def index
 
     @subjects = Subject.all

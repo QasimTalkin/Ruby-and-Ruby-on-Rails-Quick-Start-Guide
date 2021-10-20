@@ -855,7 +855,7 @@ Take table Peopel
         end
     end
 
-    ```
+    **```**
 
 ### resourseful url helopers
 
@@ -864,3 +864,155 @@ Take table Peopel
 ![links to user](links.png)
 
 ## Rails 2 Controller and view
+
+
+###  Store data in cookies
+
+- HTML is stateless 
+- we store dats in cvoockies or session
+- coookies work liske hash 
+- set `cookies[:username]="qasim"` in conteller 
+- acess `@somevale = cookies[:username]`
+- max 4kb  
+- resided obn user compute r
+- use it to preserve state 
+- dont store model, sesntive 
+
+### Store data in sessions
+- similartr to cookies  
+- server sends session ID -> saved in cookies
+- server uses that as session identifier 
+- set `session[:username]="qasim"` in conteller 
+- acess `@somevale = session[:username]`
+- Storage 
+  - file system - slows
+  - session cookie can be intersepted
+  - suoer cookies - fast
+    - encrypted and signed 
+    - 
+
+### Messaging with the flash hash(Viewed)
+- messge in persists for redirect and dispapers 
+- perssists throughout session
+- ` flash[:notice] = "Log in successful"` 
+### Log information to a file
+
+- logs env info
+- can chose type of info to log
+- ![](pics/loglevels.png)
+- clear up log files `rails log:clear`
+-  `rake log:clear` 
+-  use that wanywhere in ruby with back tick to clear up log file
+### Inherit common behaviors with ApplicationController
+
+- rails classes inherit behaviors from Application classes '<'
+- non method action should be kept private 
+- use protecte in ApplicationController class to have subcalsses acess the method
+- secify wich action activates the filter 
+- lets add proteccted confim logged in action
+- 
+
+### Use filters to call methods automatically
+- perform hosue keeping tasks 
+- before and after controller action
+- check for login
+- 3 ways to filter (private and protected )
+  - before_action
+  - after_action
+  - around_action
+
+Understanding CSRF protections
+- CROSS SITE forgery PROTECTION
+- form for adds csrf token automaically 
+- for other use we can use `<%= csrf_meta_tag %>`
+- ![](PICS/CSRFRAILS.png)
+4m 30s
+Save
+Challenge: Controllers
+1m 36s
+Save
+Solution: Controllers
+3m 19s
+Save
+Chapter Quiz
+11 questions
+
+1. Rendering Views
+Avoid double render errors
+3m 36s
+Save
+More options for rendering content
+7m 19s
+Save
+Use layouts for shared templates
+5m 39s
+Save
+Capture content for later use
+4m 54s
+Save
+Challenge: Views
+1m 15s
+Save
+Solution: Views
+5m 16s
+Save
+Chapter Quiz
+4 questions
+
+3. Incorporating Assets
+Add style sheets to view templates
+7m 56s
+Save
+Use static image assets
+5m 9s
+Save
+Use images as CSS backgrounds
+4m 19s
+Save
+About JavaScript in Ruby on Rails
+3m 50s
+Save
+Manage JavaScript with Webpacker
+4m 2s
+Save
+Configure asset pipeline for JavaScript
+5m 7s
+Save
+Manage JavaScript with asset pipeline
+3m 37s
+Save
+Chapter Quiz
+4 questions
+
+4. Work Faster with Helpers
+Text helpers
+3m 19s
+Save
+Sanitization helpers
+5m 38s
+Save
+Number helpers
+3m 16s
+Save
+Date and time helpers
+3m 52s
+Save
+Form helpers
+8m 16s
+Save
+Custom helpers
+6m 24s
+Save
+Challenge: Helpers
+3m 32s
+Save
+Solution: Helpers
+6m 35s
+Save
+Chapter Quiz
+4 questions
+
+Conclusion
+Next steps
+1m 1s
+Save

@@ -1,7 +1,22 @@
 Rails.application.routes.draw do
+
   root 'demo_ctrl#home'
 
+  get 'demo_ctrl/index'
+  get 'demo_ctrl/home'
+  get 'demo_ctrl/about'
+  get 'demo_ctrl/contact'
+
   ## adding all resouseful routes 
+  get 'menu' => 'access#menu'
+  get 'login' => 'access#new'
+  delete 'logout' => 'access#destroy'
+
+  resource :access, controller: 'access', except: [:show, :edit, :update] do
+    member do
+      get :menu
+    end
+  end
 
   resources :subjects do 
     member do 
@@ -15,6 +30,9 @@ Rails.application.routes.draw do
     end
   end
 
+
+end
+
   # get 'pages/index'
   # get 'pages/show'
   # get 'pages/new'
@@ -26,13 +44,7 @@ Rails.application.routes.draw do
   # get 'subjects/edit'
   # get 'subjects/delete'
 
-  get 'demo_ctrl/index'
-  get 'demo_ctrl/home'
-  get 'demo_ctrl/about'
-  get 'demo_ctrl/contact'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # default route
   # get ':controller(/:action(/:id))'
-
-
-end

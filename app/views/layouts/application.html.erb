@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ROR6ETLINKDLN</title>
+    <title>ROR_LL<%= '-'+yield(:title) if content_for?(:title) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+ <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+ <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
-  <body>
+  <body>  <!-- NAVBAR -->
+    <%= render 'access/navbar'%>
+ 
+ 
+ 
+<div class="container">
     <%= yield %>
+</div>
   </body>
+ 
 </html>

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 
+    layout "application"
     before_action :set_name_lang
     protect_from_forgery with: :exception
 
@@ -8,6 +9,7 @@ class ApplicationController < ActionController::Base
 
     def confirm_login
         if session[:user_id].present?
+            return true
         else
             flash[:notice] = "Try login in"
             redirect_to(login_path)
@@ -16,8 +18,12 @@ class ApplicationController < ActionController::Base
 
 
     def set_name_lang
-    cookies[:username].present? ? @username = cookies[:username] : true
-    cookies[:lang].present? ? @userlang = cookies[:lang] : true
+        @username = cookies[:username] if cookies[:username].present?
+        @userlang = cookies[:lang] if cookies[:lang].present?
+    end
 
+    def render_404
+        filepath = Rails.root.join('public', '404.html')
+        render(file: filepath, status: 404, layout: false) and return
     end
 end

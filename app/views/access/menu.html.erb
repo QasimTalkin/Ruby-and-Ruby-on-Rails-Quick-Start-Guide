@@ -1,11 +1,4 @@
-
- <% if flash[:notice].present?%>
-<div class="alert alert-success" role="alert">
-    FLASH NOTICE --
-<%= flash[:notice] %>
-</div>
-<%end%>
-
+<%= render 'flash' %>
 
 <h1>Access#menu</h1>
 <p>you are loggged in as </p>
@@ -13,3 +6,14 @@
 <%= @user_id %>
 
 <%= link_to "loggout", logout_path, method: :delete %>
+
+<div> 
+<ul> 
+<li> 
+<%= link_to "Manage Subjects", subjects_path %>
+</li>
+<li> 
+<%= link_to "Manage Page", pages_path %>
+</li>
+</ul> 
+</div>

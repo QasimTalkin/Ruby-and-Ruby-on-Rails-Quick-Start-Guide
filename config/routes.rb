@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   ## adding all resouseful routes 
   get 'menu' => 'access#menu'
   get 'login' => 'access#new'
-  delete 'logout' => 'access#destroy'
+  get'logout' => 'access#destroy'
 
   resource :access, controller: 'access', except: [:show, :edit, :update] do
     member do

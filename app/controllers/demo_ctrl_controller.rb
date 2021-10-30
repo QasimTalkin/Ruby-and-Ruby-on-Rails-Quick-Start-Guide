@@ -2,6 +2,7 @@ class DemoCtrlController < ApplicationController
   before_action :confirm_login
 
   def index
+    
   end
 
   def home

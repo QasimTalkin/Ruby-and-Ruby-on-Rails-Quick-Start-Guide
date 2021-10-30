@@ -921,98 +921,50 @@ Take table Peopel
   - after_action
   - around_action
 
-Understanding CSRF protections
+### Understanding CSRF protections
+- add to applicationController ``
 - CROSS SITE forgery PROTECTION
 - form for adds csrf token automaically 
 - for other use we can use `<%= csrf_meta_tag %>`
 - ![](PICS/CSRFRAILS.png)
-4m 30s
-Save
-Challenge: Controllers
-1m 36s
-Save
-Solution: Controllers
-3m 19s
-Save
-Chapter Quiz
-11 questions
 
-1. Rendering Views
-Avoid double render errors
-3m 36s
-Save
-More options for rendering content
-7m 19s
-Save
+
+### *2. Rendering Views*
+### Avoid double render errors
+- Render sets the tmeplate to be rendered
+- Redirect sets the value in http respose 
+- use `and return` not && 
+- `render (home_path) and return`
+
+### More options for rendering content
+```rb
+
+- render(template: show)
+- render(plain : "Just render Text "
+- redner(Json: @customers)
+- render(xml:[1,2,3])
+- render(file:'path/to/file')
+- send_file('path/to/file') #downalod file 
+```
 Use layouts for shared templates
-5m 39s
+- simialr look and feel 
+- erb tag 'yield'
+- layout 'applicatio'
 Save
 Capture content for later use
-4m 54s
-Save
-Challenge: Views
-1m 15s
-Save
-Solution: Views
-5m 16s
-Save
-Chapter Quiz
-4 questions
+- contnet_for -> store conent for later use
+- accumualted code in the conente can b acessed later ysing yield(:Symbol>)
 
-3. Incorporating Assets
-Add style sheets to view templates
-7m 56s
-Save
-Use static image assets
-5m 9s
-Save
-Use images as CSS backgrounds
-4m 19s
-Save
-About JavaScript in Ruby on Rails
-3m 50s
-Save
-Manage JavaScript with Webpacker
-4m 2s
-Save
-Configure asset pipeline for JavaScript
-5m 7s
-Save
-Manage JavaScript with asset pipeline
-3m 37s
-Save
-Chapter Quiz
-4 questions
+```erb
+set 
+<%contetn_for (:script) do %>
+<sciprt> 
+alert("something to call wheneeve)
+</sciprt>
+<% end %>
 
-4. Work Faster with Helpers
-Text helpers
-3m 19s
-Save
-Sanitization helpers
-5m 38s
-Save
-Number helpers
-3m 16s
-Save
-Date and time helpers
-3m 52s
-Save
-Form helpers
-8m 16s
-Save
-Custom helpers
-6m 24s
-Save
-Challenge: Helpers
-3m 32s
-Save
-Solution: Helpers
-6m 35s
-Save
-Chapter Quiz
-4 questions
 
-Conclusion
-Next steps
-1m 1s
-Save
+capture 
+<%= yield(:script)>
+
+```

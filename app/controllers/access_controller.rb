@@ -3,15 +3,16 @@ class AccessController < ApplicationController
 
   before_action :confirm_login, :except => [:new, :create]
 
+
   # display menu
   def menu
-
     @user_id = session[:user_id]
   end
 
   # display login form
   def new
   end
+
 
   # process login form
   def create
@@ -28,8 +29,7 @@ class AccessController < ApplicationController
   def destroy
     logger.info("~~~~~~~ User #{session[:username]} logging out ~~~~~~~")
     session[:user_id] = nil
-    flash[:notice] = "LogOut successful"
-   
+    flash[:notice] = "Log-out successful"
     redirect_to(login_path)
   end
 

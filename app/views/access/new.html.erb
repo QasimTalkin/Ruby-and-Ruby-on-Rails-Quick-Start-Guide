@@ -1,15 +1,12 @@
 
 <% content_for(:title) { 'Log In' } %>
 
- <% if flash[:notice].present?%>
-<div class="alert alert-success" role="alert">
-    FLASH NOTICE --
-<%= flash[:notice] %>
-</div>
-<%end%>
+<%= render 'flash' %>
+
 <div class="access new">
   <h2>Welcome</h2>
   <p>A simulated log in form</p>
+
 
   <%= form_tag(access_path) do %>
     <table summary="login">

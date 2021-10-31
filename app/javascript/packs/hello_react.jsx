@@ -16,13 +16,14 @@ Hello.defaultProps = {
   name: 'David'
 }
 
+
 Hello.propTypes = {
   name: PropTypes.string
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello name="Qasim - from - React" />,
+    <Hello name="Qasim rom- React" />,
     document.body.appendChild(document.createElement('div')),
   )
 })

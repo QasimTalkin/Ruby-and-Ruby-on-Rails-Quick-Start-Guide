@@ -968,3 +968,73 @@ capture
 <%= yield(:script)>
 
 ```
+**static iamges** 
+- Storend and dont cahnge 
+- take an image or use raisl asset pipelines 
+- assets fingure prints 
+- `app/assets/logo.png`
+- image_tag('logo.png')
+
+**js**
+- write Js in public
+- asssets pipelines 
+- webpacker defult in rails 6
+  - webpaer - tuns on by default
+
+- assets fingureprints : A number is created and appended to a filename to track changes in a file.
+
+
+### Helper methods
+1. text helper 
+   - word_wrap : long text breaks it not lenth 
+     - `<%= word_wrap(text, :line_wiedth=>30)%>`
+   - simple_format : respect line break 
+   - truncate: truncate(text, :length=>28) add 25 chars + ...
+   - pluralize -> ![pulrize](gitDocs/pluarize.png)
+   - truncate_work 
+   - highlight
+   - excerpts 
+  
+2. Sanatize helper 
+   - prvent site break or CRS 
+   - all contnet by user should be assumed unsafe 
+   - could be melescisous 
+   - `html_escape()`, h()
+     - Rails 6 escape all html by default 
+     - unless you wan to allow it 
+     - can use the `messafe.html_safe`
+     - strip_links(text) -> rmoves links from tag 
+     - or remo all html taqs 
+     - strip_tags(text)
+3. number helper 
+  - ![numb helpers](gitDocs/number%20helpers%20.png)
+  - number as first arg 
+  - hash of options 
+    - :delimiter ' '
+    - :seprtor=> ','
+    - :precision => 2 (rounds it)
+  - number to human size 
+  - number to phone 
+4. Date time helper
+  - seconds, minutes, ....year 
+  - Time.now + 30.days - 23.minutes 
+  - Time.now - 30.days 30.dayago
+  - ![time calcs](gitDocs/timeCals.png)
+  - **Date time formating** 
+  - `strftime'
+  - `Time.now.strftime('%B %d, %Y, %H:%M')` -> June 12, 2020 13:23
+  - or Time.now(format string
+    - ![](gitDocs/time%20string%20formats%20.png)
+5. Form helpers 
+   - form_tag(a,f) do end
+   - form_for (object, options) do |f| end
+     - object can be used to retrive data from DB add and so on
+     - f.text_field(:name)
+     - ![](gitDocs/formhelpers.png)
+   - **Select** 
+     - ![form select](gitDocs/form%20selct.png)
+6. Custom helpers 
+   - all helpers are avaialable in all view template 
+   - frequest codes 
+   - ruby files ruby code
+

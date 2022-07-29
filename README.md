@@ -2,7 +2,7 @@
 ## Ruby
 
 ### documentation
-
+get ruby docs using `gem docs`
 `ri String#upcase` ruby information on String -> upcase
 
 ### Objects

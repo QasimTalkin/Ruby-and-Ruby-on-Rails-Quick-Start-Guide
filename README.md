@@ -1,10 +1,102 @@
+# Ruby - Quick - Guide
+- [Ruby - Quick - Guide](#ruby---quick---guide)
+  - [Sample Ruby react Application](#sample-ruby-react-application)
+    - [documentation](#documentation)
+  - [Ruby Basics](#ruby-basics)
+    - [Objects](#objects)
+    - [variable](#variable)
+    - [Numerics](#numerics)
+    - [String](#string)
+    - [Arrays](#arrays)
+    - [Hashes](#hashes)
+    - [Symbols](#symbols)
+    - [BOOLENA](#boolena)
+    - [Ranges](#ranges)
+    - [Constants](#constants)
+    - [nil](#nil)
+  - [Control Structure](#control-structure)
+    - [if else if](#if-else-if)
+    - [unless](#unless)
+    - [case](#case)
+    - [sortHand](#sorthand)
+    - [loops](#loops)
+    - [itirators](#itirators)
+  - [Best Practices](#best-practices)
+    - [Exit a running script](#exit-a-running-script)
+    - [Input and Output](#input-and-output)
+  - [Enumerable -\> can be counted](#enumerable---can-be-counted)
+    - [code block 'do end'](#code-block-do-end)
+    - [find methods](#find-methods)
+    - [Map/collec](#mapcollec)
+    - [inject/reduce methods](#injectreduce-methods)
+    - [Sort \<=\> sapceship operator](#sort--sapceship-operator)
+    - [merge methods](#merge-methods)
+  - [Ruby custom methods](#ruby-custom-methods)
+    - [Scope ...](#scope-)
+    - [retun value](#retun-value)
+    - [return more than one vlue](#return-more-than-one-vlue)
+  - [---------------------------](#---------------------------)
+  - [Ruby Classes !!!1](#ruby-classes-1)
+  - [---------------------------](#----------------------------1)
+    - [Define calsses](#define-calsses)
+    - [attributes](#attributes)
+    - [Readed and Writer method](#readed-and-writer-method)
+    - [Attribaute methods](#attribaute-methods)
+    - [method acess calls](#method-acess-calls)
+    - [initialize methods](#initialize-methods)
+    - [Challange](#challange)
+  - [Class methods](#class-methods)
+    - [class attributes](#class-attributes)
+    - [Class Reader Writer methods](#class-reader-writer-methods)
+    - [Radio challange](#radio-challange)
+  - [Class inheritance](#class-inheritance)
+    - [oversire and exrtend](#oversire-and-exrtend)
+    - [Acess super calss from child class](#acess-super-calss-from-child-class)
+  - [DATE and TIME](#date-and-time)
+    - [Date class](#date-class)
+    - [Datetime class -\> sub class of date time](#datetime-class---sub-class-of-date-time)
+    - [Date time challange](#date-time-challange)
+  - [Namespacing](#namespacing)
+    - [Mixins](#mixins)
+    - [when to use what ? 4](#when-to-use-what--4)
+    - [Load Require and Include](#load-require-and-include)
+    - [challange](#challange-1)
+    - [ECEPTIONS Begin Rescue End](#eceptions-begin-rescue-end)
+  - [Rails](#rails)
+    - [creating controller and views](#creating-controller-and-views)
+    - [Routes](#routes)
+    - [varibale vs instance variable (@)](#varibale-vs-instance-variable-)
+    - [Active record and active relation](#active-record-and-active-relation)
+      - [Rails controller db commands](#rails-controller-db-commands)
+    - [Database association](#database-association)
+    - [CRUD](#crud)
+    - [REST](#rest)
+    - [resourseful url helopers](#resourseful-url-helopers)
+  - [Rails 2 Controller and view](#rails-2-controller-and-view)
+    - [Store data in cookies](#store-data-in-cookies)
+    - [Store data in sessions](#store-data-in-sessions)
+    - [Messaging with the flash hash(Viewed)](#messaging-with-the-flash-hashviewed)
+    - [Log information to a file](#log-information-to-a-file)
+    - [Inherit common behaviors with ApplicationController](#inherit-common-behaviors-with-applicationcontroller)
+    - [Use filters to call methods automatically](#use-filters-to-call-methods-automatically)
+    - [Understanding CSRF protections](#understanding-csrf-protections)
+    - [*2. Rendering Views*](#2-rendering-views)
+    - [Avoid double render errors](#avoid-double-render-errors)
+    - [More options for rendering content](#more-options-for-rendering-content)
+    - [Helper methods](#helper-methods)
 
-## Ruby
 
-### documentation
+## Sample Ruby react Application
+* `yarn install`
+* `bundle install`
+* `rails s` `
+* the root passowrd for mysql is set to `password`
+## documentation
 get ruby docs using `gem docs`
 `ri String#upcase` ruby information on String -> upcase
 
+
+## Ruby Basics
 ### Objects
 
 * everything is Object
@@ -426,13 +518,13 @@ pig lating
 - attribute -> state 
 - methods -> behaviour
  ```rb 
- Calss CamleCaseNAme  
+ Class CamleCaseName  
 
  end 
  ```
 - creating instance 
-- c = CamleCaseNAme.new 
-- c2 = CamleCaseNAme.new 
+- c = CamleCaseName.new 
+- c2 = CamleCaseName.new 
 ### attributes 
 - values that pesit indi and instance of a class 
 - properties of a an object 'car is greeen'
